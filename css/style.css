@@ -100,6 +100,13 @@ em {
 .header .tagline {
     display: none
 }
+@media only screen and (min-width: 450px) {
+    
+    .header .tagline { margin-top:400px;}
+
+}
+
+
 
 @media screen and (min-width:600px) {
     .header {
@@ -119,7 +126,8 @@ em {
         color: #fff;
         max-width: 40em;
         line-height: 140%;
-        font-size: 2.5rem
+        font-size: 2.5rem;
+         margin-top:550px;
     }
     .header .tagline h1 {
         display: none
@@ -127,12 +135,16 @@ em {
     .header .tagline em {
         font-size: 140%;
         color: #f3d350;
-        font-style: normal
+        font-style: normal;
+       
     }
 }
 
 .nav {
-    margin-top: 1.75rem/* navelements */
+    
+    background: linear-gradient( black, rgb(128 128 128 /.3) );
+    width: 100%;
+    position: fixed;
 }
 
 .nav .nav-elements {
@@ -191,6 +203,7 @@ em {
 }
 
 @media screen and (min-width:600px) {
+    
     .nav .nav-elements .branding {
         width: 30%;
         margin: 0
