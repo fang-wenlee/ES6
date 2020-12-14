@@ -10,7 +10,7 @@
 <script type="text/javascript" src="jquery-3.0.0.js"></script>
 
 <script>
-  $(function () {
+ $("document").ready(function(){ 
       $("#products h2.product-name[data-type='mineralwater']").css("background-color", "#2982D0");
       $("#products h2.product-name[data-type='vitamin']").css("background-color", "#12500F");
       $("#products h2.product-name[data-type='proteinbar']").css("background-color", "#4E0F50");
@@ -25,9 +25,48 @@
           updateProductView("proteinbar", evt.target.checked);
       });
 
-      
-      
-  })
+
+
+    $("nav .mobile_menu").on('click', function(){
+     
+      var currentNavHeight = $('nav').height();
+       alert(currentNavHeight);
+       if (currentNavHeight > 5){
+         alert("> 5")
+        $(".nav .nav-elements .navbar").css ("visibility", "visible");
+              // $('nav').css("height", "0px");
+              var newNavHeight = $('nav').height() + 25;
+             // alert(newNavHeight)
+               $('nav').animate({'height' : newNavHeight+ 'px'}, 0 )
+               $('nav').css("height", "0px");
+          }
+          else
+          {
+           
+               $('nav').animate({'height' : '750px'}, 0, function(){
+                $(this).removeAttr('style');
+                $(".nav .nav-elements .navbar").css ("visibility", "hidden");
+            
+             
+              })}//else
+
+
+    })
+ });
+
+     
+     
+
+
+
+// $(window).resize(function(){
+//   if ($(this).width() > 625){
+//     $('nav').removeAttr('style'); }
+// })
+    
+
+
+
 
   function updateProductView(categoryName, bVisible) {
       // get a list of the product items for the given category.
@@ -53,9 +92,10 @@
 
     <header id="home" class="header">
         <nav class="nav" role="navigation">
+          
             <div class="container nav-elements">
                 <div class="branding">
-                    <a href="#home"><img src="images/hpluslogo.svg" alt="Logo - H Plus Sports"></a>
+                    <a  class="mobile_menu" title="menu"><img src="images/hpluslogo.svg" alt="Logo - H Plus Sports"></a>
                 </div>
                 <!-- branding -->
                 <ul class="navbar">
