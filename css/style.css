@@ -3,7 +3,7 @@ html {
     font-size: 62.5%;
     box-sizing: border-box
 }
-
+/* pull and fatch */
 *, :after, :before {
     box-sizing: inherit
 }
