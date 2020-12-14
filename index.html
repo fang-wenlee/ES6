@@ -27,34 +27,44 @@
 
 
 
-  
-      document.querySelector(".branding").addEventListener('click', function(evt){
+    $("nav .mobile_menu").on('click', function(){
+     
       var currentNavHeight = $('nav').height();
-      alert("Did you just click me");
-        if (currentNavHeight < 5){
-            var newNavHeight = $('nav >ul').height() + 25;
-            // $('nav').animate({'height' : newNavHeight+ 'px'}, 750 )
-            $(".nav").css ("height", "600px");  
-            $(".nav").slideUp(600)
-        }
-        else
-        {
+       alert(currentNavHeight);
+       if (currentNavHeight > 5){
+         alert("> 5")
+        $(".nav .nav-elements .navbar").css ("visibility", "visible");
+              // $('nav').css("height", "0px");
+              var newNavHeight = $('nav').height() + 25;
+             // alert(newNavHeight)
+               $('nav').animate({'height' : newNavHeight+ 'px'}, 0 )
+               $('nav').css("height", "0px");
+          }
+          else
+          {
            
-            $(".nav").css ("height", "0px");  
-            $(".nav").slideDown(600)
-        }
-      })
+               $('nav').animate({'height' : '750px'}, 0, function(){
+                $(this).removeAttr('style');
+                $(".nav .nav-elements .navbar").css ("visibility", "hidden");
+            
+             
+              })}//else
+
+
+    })
+ });
+
+     
      
 
 
-});
 
 // $(window).resize(function(){
 //   if ($(this).width() > 625){
 //     $('nav').removeAttr('style'); }
 // })
     
-  })
+
 
 
 
@@ -85,7 +95,7 @@
           
             <div class="container nav-elements">
                 <div class="branding">
-                    <a href="#home" class="mobile_menu" title="menu"><img src="images/hpluslogo.svg" alt="Logo - H Plus Sports"></a>
+                    <a  class="mobile_menu" title="menu"><img src="images/hpluslogo.svg" alt="Logo - H Plus Sports"></a>
                 </div>
                 <!-- branding -->
                 <ul class="navbar">

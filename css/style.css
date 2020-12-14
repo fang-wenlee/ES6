@@ -102,16 +102,17 @@ em {
 .header .tagline {
     display: none
 }
-@media only screen and (min-width: 450px) {
+@media only screen and (max-width: 450px) {
     
+    nav{height: 30px;}
     .header .tagline { margin-top:400px;}
     .nav .nav-elements .branding{  max-width: 80px;}
-
+.nav .nav-elements .navbar {visibility: hidden};
 }
 
 
 
-@media screen and (min-width:600px) {
+@media screen and (max-width:600px) {
     .header {
         background: -webkit-linear-gradient(top, rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)), url(../images/backgrounds/running.jpg);
         background: linear-gradient(180deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)), url(../images/backgrounds/running.jpg);
