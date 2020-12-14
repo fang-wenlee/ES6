@@ -107,7 +107,7 @@ em {
     nav{height: 30px;}
     .header .tagline { margin-top:400px;}
     .nav .nav-elements .branding{  max-width: 80px;}
-.nav .nav-elements .navbar {visibility: hidden};
+   .nav .nav-elements .navbar {visibility: hidden};
 }
 
 
