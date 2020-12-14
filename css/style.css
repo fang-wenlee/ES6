@@ -103,6 +103,7 @@ em {
 @media only screen and (min-width: 450px) {
     
     .header .tagline { margin-top:400px;}
+    .nav .nav-elements .branding{  max-width: 80px;}
 
 }
 
@@ -152,7 +153,7 @@ em {
 }
 
 .nav .nav-elements .branding {
-    max-width: 180px;
+    max-width: 130px;
     margin: 0 auto
 }
 
@@ -169,15 +170,16 @@ em {
     font-weight: 600;
     color: #fff;
     text-decoration: none;
-    padding: 0 1rem;
+    padding: 0 3rem;
     -webkit-transition: 1s ease-out;
     transition: 1s ease-out
+   
 }
 
 .nav .nav-elements .navbar a:after {
     content: '';
     display: block;
-    height: 5px;
+    height: 10px;
     width: 0;
     margin: 0 .5rem;
     -webkit-transition: width .3s ease-out, background-color .3s ease-out;

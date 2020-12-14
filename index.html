@@ -10,7 +10,7 @@
 <script type="text/javascript" src="jquery-3.0.0.js"></script>
 
 <script>
-  $(function () {
+ $("document").ready(function(){ 
       $("#products h2.product-name[data-type='mineralwater']").css("background-color", "#2982D0");
       $("#products h2.product-name[data-type='vitamin']").css("background-color", "#12500F");
       $("#products h2.product-name[data-type='proteinbar']").css("background-color", "#4E0F50");
@@ -25,9 +25,38 @@
           updateProductView("proteinbar", evt.target.checked);
       });
 
-      
-      
+
+
+  
+      document.querySelector(".branding").addEventListener('click', function(evt){
+      var currentNavHeight = $('nav').height();
+      alert("Did you just click me");
+        if (currentNavHeight < 5){
+            var newNavHeight = $('nav >ul').height() + 25;
+            // $('nav').animate({'height' : newNavHeight+ 'px'}, 750 )
+            $(".nav").css ("height", "600px");  
+            $(".nav").slideUp(600)
+        }
+        else
+        {
+           
+            $(".nav").css ("height", "0px");  
+            $(".nav").slideDown(600)
+        }
+      })
+     
+
+
+});
+
+// $(window).resize(function(){
+//   if ($(this).width() > 625){
+//     $('nav').removeAttr('style'); }
+// })
+    
   })
+
+
 
   function updateProductView(categoryName, bVisible) {
       // get a list of the product items for the given category.
@@ -53,9 +82,10 @@
 
     <header id="home" class="header">
         <nav class="nav" role="navigation">
+          
             <div class="container nav-elements">
                 <div class="branding">
-                    <a href="#home"><img src="images/hpluslogo.svg" alt="Logo - H Plus Sports"></a>
+                    <a href="#home" class="mobile_menu" title="menu"><img src="images/hpluslogo.svg" alt="Logo - H Plus Sports"></a>
                 </div>
                 <!-- branding -->
                 <ul class="navbar">
